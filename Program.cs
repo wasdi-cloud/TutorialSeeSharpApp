@@ -16,7 +16,19 @@ namespace TutorialSeeSharpApp
 
         public void Run(Wasdi wasdi)
         {
-            wasdi.WasdiLog(wasdi.Hello());
+            GetWorkspacesNames(wasdi);
+        }
+
+        private static void GetWorkspacesNames(Wasdi wasdi)
+        {
+            wasdi.WasdiLog("GetWorkspacesNames():");
+
+            List<string> workspacesNames = wasdi.GetWorkspacesNames();
+
+            foreach (string workspaceName in workspacesNames)
+            {
+                wasdi.WasdiLog(workspaceName);
+            }
         }
     }
 }
